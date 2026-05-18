@@ -3,35 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Guida Catalogo 2026 | Easy Car</title>
+  <title>Digital Guide 2026 | Easy Car</title>
   <script src="https://tailwindcss.com"></script>
+  <style>
+    .glass-dark { background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); }
+    .glow-blue { box-shadow: 0 0 30px rgba(0, 159, 227, 0.3); }
+  </style>
 </head>
-<body class="bg-[#eff6fa] text-gray-800">
-  <header class="bg-[#0078b8] text-white py-16 px-6 text-center">
-    <h1 class="text-4xl font-black">CATALOGO INTERATTIVO 2026</h1>
-    <p class="mt-4 text-xl opacity-80">Lavora in modo più smart, rapido e digitale</p>
-  </header>
-
-  <main class="max-w-4xl mx-auto py-12 px-6">
-    <div class="grid gap-8">
-      <div class="bg-white p-8 rounded-2xl shadow-sm border-l-8 border-[#009fe3]">
-        <h2 class="text-2xl font-bold text-[#004e77] mb-4">✨ Tutto è Cliccabile</h2>
-        <p>Non serve copiare codici o numeri. Se consulti il catalogo da PC o Smartphone, ti basta <strong>toccare le icone</strong> per chiamare, inviare una mail o aprire una scheda tecnica.</p>
-      </div>
-
-      <div class="bg-white p-8 rounded-2xl shadow-sm border-l-8 border-orange-500">
-        <h2 class="text-2xl font-bold text-[#004e77] mb-4">🛒 Ordini Immediati</h2>
-        <p>Trovi un marchio che ti serve? Clicca sul suo logo all'interno del catalogo per essere catapultato sul nostro <strong>E-commerce</strong> con disponibilità in tempo reale.</p>
-      </div>
+<body class="bg-slate-950 text-slate-200">
+  <section class="min-h-screen py-20 px-6 flex flex-col items-center">
+    <div class="text-center mb-16">
+        <h1 class="text-6xl font-black text-white mb-4 tracking-tighter uppercase italic">Digital <span class="text-[#009fe3]">Evolution</span></h1>
+        <p class="text-slate-400 uppercase tracking-[0.4em] font-bold text-xs">Guida al Catalogo Interattivo 2026</p>
     </div>
 
-    <div class="mt-12 text-center">
-      <a href="https://drive.google.com/drive/folders/1NL7mbMClplorYxAGMWQVCasRE9vzFRgz?usp=sharing" 
-         class="inline-block bg-[#009fe3] text-white text-xl font-bold py-5 px-10 rounded-full shadow-xl hover:scale-105 transition-transform">
-        📥 SCARICA IL CATALOGO (PDF)
-      </a>
-      <p class="mt-4 text-sm text-gray-500 italic">Disponibile su Google Drive</p>
+    <div class="grid md:grid-cols-3 gap-6 max-w-6xl w-full">
+        <div class="glass-dark p-10 rounded-[2rem] glow-blue">
+            <div class="text-4xl mb-6">👆</div>
+            <h3 class="text-xl font-bold text-white mb-2">TUTTO È CLICCABILE</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">Tocca i loghi dei brand o i nomi dei prodotti: verrai rimandato istantaneamente alla scheda tecnica o al portale.</p>
+        </div>
+        <div class="glass-dark p-10 rounded-[2rem]">
+            <div class="text-4xl mb-6">⚡</div>
+            <h3 class="text-xl font-bold text-white mb-2">ORDINE DIRETTO</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">Dal catalogo all'E-commerce in un secondo. Velocità massima per professionisti che non possono perdere tempo.</p>
+        </div>
+        <div class="glass-dark p-10 rounded-[2rem]">
+            <div class="text-4xl mb-6">📱</div>
+            <h3 class="text-xl font-bold text-white mb-2">FULL MOBILE</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">Perfettamente ottimizzato per smartphone e tablet. Usa i QR Code per un accesso immediato via fotocamera.</p>
+        </div>
     </div>
-  </main>
+
+    <div class="mt-20 text-center">
+        <a href="https://google.com" class="bg-[#009fe3] text-white px-16 py-5 rounded-full font-black text-xl shadow-[0_10px_40px_-10px_rgba(0,159,227,0.5)] hover:scale-105 transition-transform inline-block uppercase italic">Download PDF Catalogo</a>
+    </div>
+  </section>
 </body>
 </html>
