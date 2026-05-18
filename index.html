@@ -1,232 +1,49 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guida Catalogo Interattivo 2026 - Easy Car</title>
-    <style>
-        :root {
-            --primary: #0f3460;    /* Blu Avio Scuro */
-            --secondary: #328cc1;  /* Blu Intermedio */
-            --accent: #adc5db;     /* Celeste Polvere */
-            --dark: #162447;       /* Blu Notte Profondo */
-            --light: #f0f4f8;      /* Sfondo morbido */
-            --success: #2ecc71;    /* Verde per i download */
-            --whatsapp: #25d366;   /* Verde WhatsApp */
-            --white: #ffffff;
-        }
-        
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        
-        body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.5;
-            color: var(--dark);
-            background-color: var(--light);
-        }
-
-        /* Testata Principale */
-        header {
-            background: linear-gradient(135deg, var(--dark), var(--primary));
-            color: var(--white);
-            padding: 50px 20px;
-            text-align: center;
-            border-bottom: 5px solid var(--secondary);
-        }
-        header h1 { font-size: 2.6em; font-weight: 800; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px; }
-        header p { font-size: 1.2em; opacity: 0.9; font-weight: 300; }
-        
-        /* Contenitore Griglia a Finestre */
-        .container { 
-            max-width: 1100px; 
-            margin: 0 auto; 
-            padding: 40px 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
-        }
-        
-        /* Finestre d'azione e informazione */
-        .window-panel {
-            background: var(--white);
-            border-radius: 14px;
-            padding: 30px;
-            box-shadow: 0 10px 25px rgba(15, 52, 96, 0.04);
-            border-top: 5px solid var(--secondary);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .window-panel:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 30px rgba(15, 52, 96, 0.08);
-        }
-
-        .window-panel.panel-main-action { border-top-color: var(--success); background-color: #f6fff9; }
-        .window-panel.panel-b2b-action { border-top-color: var(--primary); background-color: #f4f8fc; }
-        .window-panel.panel-alert { border-top-color: #e74c3c; }
-
-        .window-panel h2 {
-            color: var(--primary);
-            font-size: 1.4em;
-            font-weight: 800;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-transform: uppercase;
-        }
-        
-        .window-panel p {
-            font-size: 1em;
-            color: #475569;
-            margin-bottom: 15px;
-        }
-
-        ul { list-style: none; margin-bottom: 20px; }
-        li { padding: 8px 0; border-bottom: 1px solid #f1f5f9; font-size: 0.95em; position: relative; padding-left: 20px; }
-        li::before { content: "→"; color: var(--secondary); font-weight: bold; position: absolute; left: 0; }
-        li:last-child { border-bottom: none; }
-
-        /* Tasti di Riferimento */
-        .btn-panel {
-            display: inline-block;
-            width: 100%;
-            padding: 12px 20px;
-            text-align: center;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: 700;
-            font-size: 1em;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            transition: all 0.2s ease;
-            margin-top: auto;
-        }
-
-        .btn-green { background-color: var(--success); color: var(--white); box-shadow: 0 4px 10px rgba(46, 204, 113, 0.2); }
-        .btn-green:hover { background-color: #27ae60; }
-
-        .btn-blue { background-color: var(--primary); color: var(--white); box-shadow: 0 4px 10px rgba(15, 52, 96, 0.2); }
-        .btn-blue:hover { background-color: var(--secondary); }
-
-        .btn-wa { background-color: var(--whatsapp); color: var(--white); box-shadow: 0 4px 10px rgba(37, 211, 102, 0.2); }
-        .btn-wa:hover { background-color: #1ebd58; }
-
-        .btn-red { background-color: #e74c3c; color: var(--white); box-shadow: 0 4px 10px rgba(231, 76, 60, 0.2); }
-        .btn-red:hover { background-color: #c0392b; }
-
-        .badge-time { display: inline-block; background-color: var(--primary); color: var(--white); padding: 2px 6px; border-radius: 4px; font-size: 0.85em; font-weight: 600; margin-right: 5px; }
-
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            font-size: 0.95em;
-            color: #666;
-            border-top: 1px solid #ddd;
-            margin-top: 40px;
-        }
-        
-        @media (max-width: 768px) {
-            header h1 { font-size: 1.9em; }
-            .container { grid-template-columns: 1fr; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guida Catalogo Interattivo | Easy Car SAS</title>
+  <style>
+    body {margin:0; font-family:'Segoe UI',sans-serif; background:#eff6fa; color:#333;}
+    header {background:#0078b8; color:#fff; text-align:center; padding:40px 20px;}
+    section {padding:40px 20px; max-width:900px; margin:auto;}
+    h2 {color:#004e77;}
+    .step {background:#e2f2fa; margin:20px 0; padding:20px; border-radius:8px;}
+    .btn {display:inline-block; background:#009fe3; color:#fff; padding:10px 20px; border-radius:5px; text-decoration:none;}
+    footer {background:#004e77; color:#fff; text-align:center; padding:15px;}
+  </style>
 </head>
 <body>
+<header>
+  <h1>Catalogo Interattivo Easy Car 2026</h1>
+  <p>Scopri come usare il nuovo catalogo digitale per risparmiare tempo e lavorare in modo più smart</p>
+</header>
 
-    <header>
-        <h1>Uso Avanzato del Catalogo Interattivo</h1>
-        <p>Easy Car S.A.S. — Ottimizza le ricerche e velocizza gli ordini ricambi</p>
-    </header>
+<section>
+  <h2>Come Funziona</h2>
+  <p>Il nostro nuovo catalogo interattivo ti permette di scoprire e ordinare i ricambi con un semplice click: ogni marchio, immagine o categoria è collegata direttamente all’e-commerce o ai cataloghi ufficiali.</p>
 
-    <div class="container">
+  <div class="step">
+    <h3>📱 Tutto è cliccabile</h3>
+    <p>Basta toccare le icone per attivare i collegamenti: numeri di telefono, WhatsApp, link ai brand e cataloghi.</p>
+  </div>
 
-        <!-- FINESTRA 1: ACCESSO AL PDF DEL CATALOGO -->
-        <div class="window-panel panel-main-action">
-            <div>
-                <h2>📥 Sfoglia il Catalogo PDF</h2>
-                <p>Accedi alla cartella ufficiale su Google Drive per visualizzare o scaricare sul tuo smartphone o PC il file completo del catalogo.</p>
-                <ul>
-                    <li>File ad alta risoluzione sempre aggiornato</li>
-                    <li>Collegamenti cliccabili attivi su ogni pagina</li>
-                    <li>Salva sul desktop per la massima velocità</li>
-                </ul>
-            </div>
-            <a href="https://google.com" target="_blank" class="btn-panel btn-green">📁 Apri Cartella Catalogo</a>
-        </div>
+  <div class="step">
+    <h3>🛒 Accesso diretto all’E-Commerce</h3>
+    <p>Individua il prodotto, clicca sul logo del marchio e accedi subito al portale B2B per verificarne prezzo e disponibilità.</p>
+  </div>
 
-        <!-- FINESTRA 2: ACCESSO ALL'ECOMMERCE -->
-        <div class="window-panel panel-b2b-action">
-            <div>
-                <h2>🌐 Portale Ordini E-Commerce</h2>
-                <p>Verifica in tempo reale prezzi netti, sconti di linea e giacenze di magazzino per inserire l'ordine senza attese.</p>
-                <ul>
-                    <li>Giacenza stock aggiornata al secondo</li>
-                    <li>Ricerca immediata per codice ricambio</li>
-                    <li>Invio ordini h24 con tracking spedizione</li>
-                </ul>
-            </div>
-            <a href="https://b2b.easycarsas.it/easycar" target="_blank" class="btn-panel btn-blue">🛒 Entra nel B2B Aziendale</a>
-        </div>
+  <div class="step">
+    <h3>🔗 Cataloghi e QR Code</h3>
+    <p>Puoi anche scaricare o stampare il catalogo e usare i QR dedicati per navigare istantaneamente con la fotocamera del telefono.</p>
+  </div>
 
-        <!-- FINESTRA 3: DOVE CLICCARE -->
-        <div class="window-panel">
-            <div>
-                <h2>🖱️ Punti di Click Strategici</h2>
-                <p>Il documento non è una semplice lettura statica, ma un'interfaccia ricca di collegamenti ipertestuali rapidi.</p>
-                <ul>
-                    <li><strong>Loghi dei Marchi:</strong> Clicca sui marchi nelle categorie per aprire la loro gamma sul B2B</li>
-                    <li><strong>Numeri Fisso:</strong> Avvia chiamate telefoniche automatiche</li>
-                    <li><strong>Email:</strong> Apri la posta elettronica con destinatario precompilato</li>
-                </ul>
-            </div>
-        </div>
+  <p><a class="btn" href="[drive.google.com](https://drive.google.com/drive/folders/1NL7mbMClplorYxAGMWQVCasRE9vzFRgz?usp=sharing)">📥 Scarica il Catalogo Digitale 2026</a></p>
+</section>
 
-        <!-- FINESTRA 4: REGOLE OPERATIVE RESI -->
-        <div class="window-panel panel-alert">
-            <div>
-                <h2>📦 Condizioni e Politica Resi</h2>
-                <p>Linee guida per la gestione dei componenti ordinati erroneamente e la relativa richiesta di accredito o sostituzione.</p>
-                <ul>
-                    <li><strong>Scadenza perentoria:</strong> Reso entro 10 giorni lavorativi</li>
-                    <li><strong>Integrità:</strong> Confezione originale di fabbrica intatta</li>
-                    <li><strong>Verifica:</strong> Nessun segno di montaggio sul pezzo</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- FINESTRA 5: ASSISTENZA WHATSAPP -->
-        <div class="window-panel">
-            <div>
-                <h2>💬 Supporto Diretto WhatsApp</h2>
-                <p>Comunica in tempo reale con il nostro reparto tecnico per problemi sui codici, compatibilità telaio o informazioni urgenti.</p>
-                <ul>
-                    <li>Invio rapido di foto del libretto auto</li>
-                    <li>Chiarimenti istantanei sulle spedizioni</li>
-                    <li>Numero dedicato: +39 393 867 2737</li>
-                </ul>
-            </div>
-            <a href="https://wa.me" target="_blank" class="btn-panel btn-wa">💬 Avvia Chat Assistenza</a>
-        </div>
-
-        <!-- FINESTRA 6: LOGISTICA E MAPPA -->
-        <div class="window-panel">
-            <div>
-                <h2>📍 Sede e Mappa di Navigazione</h2>
-                <p>Informazioni stradali utili per raggiungere il nostro magazzino principale di Cagliari e ritirare la merce di persona.</p>
-                <p><strong>Ubicazione:</strong> Viale Umberto Ticca, 26 - 09122 Cagliari</p>
-                <p><span class="badge-time">Orari</span> Dal Lunedì al Venerdì: 08:30 - 13:00 | 15:30 - 19:00</p>
-            </div>
-            <a href="https://google.com" target="_blank" class="btn-panel btn-red">📍 Avvia Navigatore GPS</a>
-        </div>
-
-    </div>
-
-    <footer>
-        <p>La Nostra Passione, Il Vostro Traguardo — Easy Car S.A.S. — Cagliari</p>
-    </footer>
-
+<footer>
+  Catalogo Interattivo Easy Car SAS © 2026 — Tecnologia e Innovazione per i Professionisti dell’Auto
+</footer>
 </body>
 </html>
