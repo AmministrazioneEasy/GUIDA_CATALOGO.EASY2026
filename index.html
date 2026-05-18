@@ -11,6 +11,7 @@
             --accent: #d9b310;
             --dark: #1d2731;
             --light: #f4f7f6;
+            --success: #2ecc71;
         }
         body {
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -43,6 +44,7 @@
             border-left: 5px solid var(--secondary);
         }
         .section-accent { border-left-color: var(--accent); }
+        .section-success { border-left-color: var(--success); }
         
         h2 {
             color: var(--primary);
@@ -64,16 +66,23 @@
         }
         .grid-img img {
             width: 100%;
-            height: 220px;
+            height: 250px;
             object-fit: cover;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            background-color: #ddd;
         }
         
-        .btn-ecommerce {
+        .cta-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .btn {
             display: inline-block;
-            background-color: var(--secondary);
-            color: white;
             padding: 14px 28px;
             text-align: center;
             text-decoration: none;
@@ -81,13 +90,41 @@
             font-weight: bold;
             font-size: 1.1em;
             transition: all 0.3s ease;
+        }
+
+        .btn-ecommerce {
+            background-color: var(--secondary);
+            color: white;
             box-shadow: 0 4px 10px rgba(50, 140, 193, 0.3);
-            margin: 20px 0;
         }
         .btn-ecommerce:hover {
             background-color: var(--primary);
             transform: translateY(-2px);
             box-shadow: 0 6px 15px rgba(11, 60, 93, 0.4);
+        }
+
+        .btn-download {
+            background-color: var(--success);
+            color: white;
+            box-shadow: 0 4px 10px rgba(46, 204, 113, 0.3);
+        }
+        .btn-download:hover {
+            background-color: #27ae60;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(39, 174, 96, 0.4);
+        }
+
+        .btn-maps {
+            background-color: #e74c3c;
+            color: white;
+            padding: 8px 16px;
+            font-size: 0.95em;
+            margin-top: 10px;
+            box-shadow: 0 3px 6px rgba(231, 76, 60, 0.2);
+        }
+        .btn-maps:hover {
+            background-color: #c0392b;
+            transform: translateY(-1px);
         }
         
         .badge {
@@ -113,8 +150,11 @@
         
         @media (max-width: 600px) {
             .grid-img { grid-template-columns: 1fr; }
+            .grid-img img { height: 180px; }
             header h1 { font-size: 1.7em; }
             .section { padding: 20px; }
+            .cta-container { flex-direction: column; }
+            .btn { width: 100%; box-sizing: border-box; }
         }
     </style>
 </head>
@@ -132,8 +172,16 @@
             <p>Il nostro nuovo catalogo digitale è stato progettato per azzerare i tempi di ricerca delle officine e dei ricambisti. Non hai più bisogno di copiare, digitare o trascrivere i codici dei componenti: ogni elemento visivo e icona sul PDF è un collegamento ipertestuale immediato.</p>
             
             <div class="grid-img">
-                <img src="https://unsplash.com" alt="Ricambi auto e dischi freno">
-                <img src="https://unsplash.com" alt="Meccanico al lavoro in officina">
+                <img src="https://unsplash.com" alt="Ricambi Auto">
+                <img src="https://unsplash.com" alt="Officina Meccanica">
+            </div>
+        </div>
+
+        <div class="section section-success">
+            <h2>📥 Scarica il Catalogo sul tuo Dispositivo</h2>
+            <p>Non hai ancora salvato la tua copia del catalogo? Clicca sul pulsante verde qui sotto per scaricare direttamente sul tuo computer o smartphone il file PDF interattivo completo ed essere subito operativo.</p>
+            <div class="cta-container">
+                <a href="Catalogo aziendale Easy Car S.a.s. (51).pdf" download class="btn btn-download">⬇️ Scarica il Catalogo PDF</a>
             </div>
         </div>
 
@@ -153,8 +201,8 @@
                 <li><strong>Numeri di Telefono Fisso (Pagina 12):</strong> Un semplice click sui recapiti telefonici farà partire la chiamata automatica verso i nostri uffici (<a href="tel:070242054">070 242054</a> oppure <a href="tel:070240632">070 240632</a>).</li>
                 <li><strong>Indirizzi Email dell'Azienda:</strong> Cliccando sulle caselle di posta <a href="mailto:amministrazione@easycarsas.it">amministrazione@easycarsas.it</a> o <a href="mailto:resi@easycarsas.it">resi@easycarsas.it</a> si aprirà l'app delle email con il destinatario precompilato.</li>
             </ul>
-            <div style="text-align: center;">
-                <a href="https://b2b.easycarsas.it/easycar/" target="_blank" class="btn-ecommerce">Accedi all'E-Commerce Aziendale</a>
+            <div class="cta-container">
+                <a href="https://easycarsas.it" target="_blank" class="btn btn-ecommerce">🌐 Accedi all'E-Commerce Aziendale</a>
             </div>
         </div>
 
@@ -168,9 +216,13 @@
         </div>
 
         <div class="section">
-            <h2>📍 Informazioni Utili Aziendali</h2>
+            <h2>📍 Informazioni Utili e Mappa</h2>
             <p><strong>Sede Operativa:</strong> Viale Umberto Ticca, 26 - 09122 Cagliari (Sardegna)</p>
-            <p><strong>Orari di Apertura (Dal Lunedì al Venerdì):</strong><br>
+            <p>Ci trovi nella zona industriale di Cagliari, un punto strategico facilmente raggiungibile per il ritiro rapido dei tuoi ricambi auto.</p>
+            
+            <a href="https://google.com" target="_blank" class="btn btn-maps">📍 Apri su Google Maps</a>
+
+            <p style="margin-top: 20px;"><strong>Orari di Apertura (Dal Lunedì al Venerdì):</strong><br>
             • <span class="badge">Mattina</span> dalle 08:30 alle 13:00<br>
             • <span class="badge">Pomeriggio</span> dalle 15:30 alle 19:00</p>
         </div>
